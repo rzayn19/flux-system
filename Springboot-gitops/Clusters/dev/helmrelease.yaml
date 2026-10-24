@@ -5,7 +5,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 5m
-  targetNamespace: flux-system
+  # targetNamespace: flux-system
   chart:
     spec:
       chart: ./Springboot-gitops/apps/springboot/chart
