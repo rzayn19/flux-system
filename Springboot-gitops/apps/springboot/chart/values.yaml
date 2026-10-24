@@ -1,0 +1,12 @@
+replicaCount: 2
+
+image:
+  repository: runity77/springboot-demo
+  tag: "59"
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+
+containerPort: 8080
