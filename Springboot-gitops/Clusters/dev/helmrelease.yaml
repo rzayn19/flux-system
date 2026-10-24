@@ -8,7 +8,7 @@ spec:
   targetNamespace: flux-system
   chart:
     spec:
-      chart: ../../apps/springboot/chart
+      chart: ./Springboot-gitops/apps/springboot/chart
       sourceRef:
         kind: GitRepository
         name: cluster-config   # Change this from flux-system to cluster-config
