@@ -11,7 +11,7 @@ spec:
       chart: ./apps/springboot/chart
       sourceRef:
         kind: GitRepository
-        name: flux-system
+        name: cluster-config
         namespace: flux-system
       interval: 5m
   values:
