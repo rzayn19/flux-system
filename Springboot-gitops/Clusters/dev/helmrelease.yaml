@@ -2,16 +2,16 @@ apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: springboot
-  namespace: flux-system   # 1. The HelmRelease custom resource lives here
+  namespace: flux-system
 spec:
   interval: 5m
-  targetNamespace: flux-system   # 2. Tell Helm to deploy the actual app resources here too
+  targetNamespace: flux-system
   chart:
     spec:
       chart: ./apps/springboot/chart
       sourceRef:
         kind: GitRepository
-        name: cluster-config
+        name: cluster-config   # Change this from flux-system to cluster-config
         namespace: flux-system
       interval: 5m
   values:
