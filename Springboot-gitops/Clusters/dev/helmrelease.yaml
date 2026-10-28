@@ -14,6 +14,7 @@ spec:
         name: cluster-config   # Change this from flux-system to cluster-config
         namespace: flux-system
       interval: 5m
+      reconcileStrategy: Revision
   values:
     replicaCount: 2
     image:
