@@ -1,0 +1,34 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: springboot
+  namespace: flux-system
+spec:
+  interval: 5m
+  targetNamespace: flux-system
+  chart:
+    spec:
+      chart: springboot               # Name of the chart in ACR
+      version: "0.1.1"                # Version tag you pushed
+      sourceRef:
+        kind: HelmRepository
+        name: acr-springboot-repo
+        namespace: flux-system
+  values:
+    replicaCount: 2
+    image:
+      repository: runity77/springboot-demo
+      tag: "59"
+
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: acr-springboot-repo
+  namespace: flux-system
+spec:
+  interval: 1h0m0s
+  type: oci                           # Specifies that this is an OCI registry
+  url: oci://acrflux.azurecr.io/helm
+  provider: azure                     # Enables automatic Azure/ACR token handling for Flux
