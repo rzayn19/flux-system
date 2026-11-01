@@ -31,4 +31,6 @@ spec:
   interval: 1h0m0s
   type: oci                           # Specifies that this is an OCI registry
   url: oci://acrflux.azurecr.io/helm
+  secretRef:
+    name: acr-secre
   provider: azure                     # Enables automatic Azure/ACR token handling for Flux
