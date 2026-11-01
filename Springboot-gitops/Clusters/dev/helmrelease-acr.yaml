@@ -28,9 +28,9 @@ metadata:
   name: acr-springboot-repo
   namespace: flux-system
 spec:
-  interval: 1h0m0s
+  interval: 2m
   type: oci                           # Specifies that this is an OCI registry
   url: oci://acrflux.azurecr.io/helm
   secretRef:
-    name: acr-secre
+    name: acr-secret
   provider: azure                     # Enables automatic Azure/ACR token handling for Flux
