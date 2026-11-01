@@ -33,4 +33,4 @@ spec:
   url: oci://acrflux.azurecr.io/helm
   secretRef:
     name: acr-secret
-  provider: azure                     # Enables automatic Azure/ACR token handling for Flux
+  # provider: azure                     # Enables automatic Azure/ACR token handling for Flux
